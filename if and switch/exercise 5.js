@@ -31,4 +31,5 @@ switch(digit){
 				
 	case "9": console.log("nine");
 				break;
+ //this code returns undefined because it does not return any value 
 }
