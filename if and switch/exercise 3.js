@@ -17,14 +17,10 @@ if(a > b && a > c){
 }
 else{
 	if( b > c ){
-		console.log(b);
-		console.log(b>a);
-		console.log(b>c);
 		alert(b+ " is the biggest one");
-		
 	}
 	else{
 			alert(c+ " is the biggest one");
-		}
+	}
 		
 }
