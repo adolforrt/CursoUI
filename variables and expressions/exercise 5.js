@@ -8,7 +8,6 @@ while(divisor > 1 && flag == 0){
 		flag = 1;
 	}
 	divisor --;
-	console.log("divisor: "+divisor);
 }
 
 if(flag == 1){
