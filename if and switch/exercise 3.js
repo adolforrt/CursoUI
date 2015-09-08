@@ -26,4 +26,5 @@ else{
 	else{
 			alert(c+ " is the biggest one");
 		}
+		
 }
