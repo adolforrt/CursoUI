@@ -1,10 +1,9 @@
-//number of divs on a webpage
 
+findDiv();
 
-
-function findDivs(){
-var a;
-a = document.getElementsByTagName("div");
-console.log("There are "+a.length +" divs");	
+function findDiv(){
+ var a;
+ a = document.getElementsByTagName("div");
+ console.log("There are "+a.length +" divs");	
 }
 
