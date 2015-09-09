@@ -3,6 +3,7 @@ var numberName ="", ten, unit;
 
 n = prompt("Enter an integer number from 0 to 999: ");
 
+//get digits
 if(n.length == 3){
 	first = n.slice(0,1);
 	second = n.slice(1,2);
@@ -18,23 +19,19 @@ if(n.length == 1){
 	third = n.slice(0,1);
 	numberName = determineNumber(third)
 }	
-		
-	console.log("third: "+ third +" second: " +second +" first: "+ first );
-	console.log("number: " + first+second+third);	
-	console.log(n.length);
-	
+	//three digits	
 	if(first != "" && n.length == 3){
 		numberName = determineNumber(first) + " hundred";
 		if(third != "0" ) numberName = numberName + " and ";		
 	}
-	
+		
 	if(second != ""){
 		if( (second != "1" && second != "0" && third != "0" ) ){
 				ten = determineTen(second);
 				numberName = numberName + ten + " " + determineNumber(third);
 		}
 		else if( second != "1"){
-				numberName = numberName + determineNumber(second);
+				numberName = numberName + determineTen(second);
 				if(third != "0"){
 					numberName = numberName + determineNumber(third);	
 				} 
@@ -45,8 +42,13 @@ if(n.length == 1){
 	}
 		
 	
-	alert("n = "+ numberName);
+	alert(n +" = " + numberName);
 
+/*
+	takes a number and returns it name
+	number: string
+	returns: string 
+*/
 function determineNumber(number){
 	switch(number){
 		case "1": return "One";
@@ -62,6 +64,11 @@ function determineNumber(number){
 	}
 }
 
+/*
+	takes a number and returns the corresponding ten i.e: 5 "fifty"
+	number: string
+	returns: string 
+*/
 function determineTen(number){
 	switch(number){
 		case "1": return "Ten";
@@ -77,6 +84,11 @@ function determineTen(number){
 	}
 }
 
+/*
+	takes a number and returns its "teen" (11,..,19)
+	number: string
+	returns: string 
+*/
 function teens(number){
 	switch(number){
 		case "1": return "Eleven";
