@@ -40,7 +40,7 @@ if(n.length == 1){
 				} 
 				
 		}else if( second == "1" && third != "0"){  //teens
-				numberName = numberName + Teens(third);
+				numberName = numberName + teens(third);
 		}
 	}
 		
@@ -77,7 +77,7 @@ function determineTen(number){
 	}
 }
 
-function Teens(number){
+function teens(number){
 	switch(number){
 		case "1": return "Eleven";
 		case "2": return "Twelve";
