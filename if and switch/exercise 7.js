@@ -1,5 +1,5 @@
-var n,first, second, third;
-var numberName, ten, unit;
+var n,first ="", second="", third="";
+var numberName ="", ten, unit;
 
 n = prompt("Enter an integer number from 0 to 999: ");
 
@@ -10,34 +10,40 @@ if(n.length == 3){
 }
 
 if(n.length == 2){
-	second = n.slice(0,1);
+	second = n.slice(0,1); 
 	third = n.slice(1,2);
 }
 
 if(n.length == 1){
 	third = n.slice(0,1);
+	numberName = determineNumber(third)
 }	
-	
-	
-	console.log("third: "+ third +"second: " +second +"first: "+ first );
-	
-	
+		
+	console.log("third: "+ third +" second: " +second +" first: "+ first );
+	console.log("number: " + first+second+third);	
+	console.log(n.length);
 	
 	if(first != "" && n.length == 3){
 		numberName = determineNumber(first) + " hundred";
 		if(third != "0" ) numberName = numberName + " and ";		
 	}
+	
 	if(second != ""){
-		if( (second != "1" && second != "0") || (second == "1" && third == "0") ){
-			ten = determineTen(determineNumber(second));
-			numberName = numberName + ten;
+		if( (second != "1" && second != "0" && third != "0" ) ){
+				ten = determineTen(second);
+				numberName = numberName + ten + " " + determineNumber(third);
 		}
 		else if( second != "1"){
-			numberName = numberName + determineNumber(third);
-		}else if( second == "1" && third != "0"){
-			numberName = numberName + Teens(third);
+				numberName = numberName + determineNumber(second);
+				if(third != "0"){
+					numberName = numberName + determineNumber(third);	
+				} 
+				
+		}else if( second == "1" && third != "0"){  //teens
+				numberName = numberName + Teens(third);
 		}
 	}
+		
 	
 	alert("n = "+ numberName);
 
@@ -52,7 +58,7 @@ function determineNumber(number){
 		case "7": return "Seven";
 		case "8": return "Eight";
 		case "9": return "Nine";
-		case "0": return "";
+		case "0": return "Zero";
 	}
 }
 
