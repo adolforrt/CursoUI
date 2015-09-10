@@ -1,4 +1,4 @@
-var cadena = prompt("Enter a phrase: ");
+	var cadena = prompt("Enter a phrase: ");
 alert(reverse(cadena));
 
 function reverse(cadena){
