@@ -45,7 +45,7 @@ if(n.length == 1){
 	alert(n +" = " + numberName);
 
 /*
-	takes a number and returns it name
+	takes a number and returns its name
 	number: string
 	returns: string 
 */
