@@ -7,4 +7,4 @@ var str = "The rain in SPAIN stays mainly in the plain";
          var re = /ain/g;
          var found = str.match( re );
 console.log(found);
-console.log(found.length);
+console.log(found.length);{}
