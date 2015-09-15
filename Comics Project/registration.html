@@ -21,28 +21,14 @@
 					// Store
 					localStorage.setItem("username", form.id.value);
 					localStorage.setItem("password", form.pass.value);  
-					
-					// Retrieve
-					document.getElementById("result").innerHTML = 
-					localStorage.getItem("firstname") + " "+
-					localStorage.getItem("lastname");
-					} else {
+				} else {
 						document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
-					}
+				}
+						
+				
 				
 				//----
-				
-			if (form.id.value=="adolfo") { 
-				if (form.pass.value=="kit") {              
-				location="index.html" 
-				} else {
-						alert("Invalid Password")
-						}
-			} else {  
-					alert("Invalid UserID")
-					}
-			}
-			
+		
 		</script>
 		
 		<script>

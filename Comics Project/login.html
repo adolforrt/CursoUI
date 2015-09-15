@@ -18,6 +18,13 @@
 				
 		<script language="javascript">
 			function pasuser(form) {
+				//aqui deberia recuperar los datos de login 
+				// Retrieve
+				document.getElementById("result").innerHTML = 
+				localStorage.getItem("username") + " "+
+				localStorage.getItem("password");
+			//una vez recuperados, valido
+			//si el usuario y la clave coinciden con los datos registrados, continuo
 			if (form.id.value=="adolfo") { 
 				if (form.pass.value=="kit") {              
 				location="index.html" 
