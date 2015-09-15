@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		
+	</head>
+	<body>
+		<div>
+			<h1>UserID</h1>
+				<form name="login">
+					username: <input name="id" type="text">
+					password: <input name="pass" type="password">
+					<input type="button" value="Register" onClick="register(this.form)">
+					<br>
+					<input type="Reset">
+				</form>
+		</div>
+				
+		<script language="javascript">
+			function register(form) {
+				if (typeof(Storage) !== "undefined") {
+					// Store
+					localStorage.setItem("username", form.id.value);
+					localStorage.setItem("password", form.pass.value);  
+					
+					// Retrieve
+					document.getElementById("result").innerHTML = 
+					localStorage.getItem("firstname") + " "+
+					localStorage.getItem("lastname");
+					} else {
+						document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+					}
+				
+				//----
+				
+			if (form.id.value=="adolfo") { 
+				if (form.pass.value=="kit") {              
+				location="index.html" 
+				} else {
+						alert("Invalid Password")
+						}
+			} else {  
+					alert("Invalid UserID")
+					}
+			}
+			
+		</script>
+		
+		<script>
+				// Check browser support
+				
+				
+</script>
+	</body>
+</html>	
+	
+		
+		
+		
+		
+		
+	
