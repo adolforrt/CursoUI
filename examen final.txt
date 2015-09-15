@@ -1,0 +1,9 @@
+requisitos fundamentales
+no fundamentales:
+8,9,12,13
+
+Federico Severino
+1:11 PM
+http://www.w3schools.com/html/html5_webstorage.asp
+https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
+https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse
