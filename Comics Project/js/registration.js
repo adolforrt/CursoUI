@@ -1,7 +1,6 @@
 function register(form) {
 				
 //FIRST TIME
-
 if (!localStorage.getItem("comics")) {
 	alert("its the first time");
 	
@@ -9,21 +8,17 @@ if (!localStorage.getItem("comics")) {
 
 	//STORE				
 	if (typeof(Storage) !== "undefined") {
-	// Store
-		
-		localStorage.setItem("comics", store(form));
-		  
+			localStorage.setItem("comics", store(form));
 	} else {
 			document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
 	}
-							
+	/*						
 	//RETRIEVE
 	var jsonString = localStorage.getItem("comics"); 
 	var jsonObj = JSON.parse(jsonString);
 	console.log(jsonObj);
-	
-	//if( localStorage.getItem("username") != "" && localStorage.getItem("password") != "" ){
-	//location = "login.html";
+	*/
+	location = "login.html";
 }
 
 
@@ -46,12 +41,24 @@ function store(form){
 	
 	//retrieve
 	var jsonString = localStorage.getItem("comics"); 
+	//console.log(jsonString);
 	var jsonObj = JSON.parse(jsonString);
-	
-	//parse
+		
 	//look in the array arreglo de objetos
+	var user = {	username:form.id.value,
+					password:form.pass.value
+				};
+				
 	//add the new element (push con el elemento nuevo)
+	jsonObj.users.push(user);
+	
 	//generate jsonString again
+	console.log(jsonObj);
+	jsonString = JSON.stringify(jsonObj);
+	console.log(jsonString);
+	
+	//return the string
+	return jsonString;
 }
 	
 	
