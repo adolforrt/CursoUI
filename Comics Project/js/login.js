@@ -8,6 +8,9 @@ for(i=0; i<jsonObj.users.length; i++){
 	if (form.id.value == jsonObj.users[i].username) { 
 		flag = 1;
 		if (form.pass.value == jsonObj.users[i].password) {              
+			jsonObj.justSigned.username = form.id.value;
+			jsonString = JSON.stringify(jsonObj);
+			localStorage.setItem("comics", jsonString);
 			location="index.html";
 		} else {
 				alert("Invalid Password.");
@@ -16,3 +19,4 @@ for(i=0; i<jsonObj.users.length; i++){
 	}	
 	if(flag == 0) alert("Invalid User ID, please try again.");
 }
+

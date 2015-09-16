@@ -3,29 +3,24 @@ function register(form) {
 //FIRST TIME
 if (!localStorage.getItem("comics")) {
 	alert("its the first time");
+	localStorage.setItem("comics", firstTime(form));
 	
 }
-
 	//STORE				
 	if (typeof(Storage) !== "undefined") {
 			localStorage.setItem("comics", store(form));
 	} else {
 			document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
 	}
-	/*						
-	//RETRIEVE
-	var jsonString = localStorage.getItem("comics"); 
-	var jsonObj = JSON.parse(jsonString);
-	console.log(jsonObj);
-	*/
 	location = "login.html";
 }
 
 
 
 function firstTime(form){
+	//falta el dato de user/admin para cada usuario
 		
-	var jTemp = JSON.parse('{ 	"justSigned": { "username": "'+form.id.value+'" , "password": "'+form.pass.value+'"}, "users": [{"username":"'+form.id.value+'","password":"'+form.pass.value+'"}]}');
+	var jTemp = JSON.parse('{ 	"justSigned": { "username": "'+form.id.value+'" , "password": "'+form.pass.value+'","type":"user"}, "users": [{"username":"'+form.id.value+'","password":"'+form.pass.value+'","type":"user"}]}');
 	var jsonString = JSON.stringify(jTemp);
 	console.log("users length: "+jTemp.users.length +"  elements: ");
 	
@@ -41,22 +36,20 @@ function store(form){
 	
 	//retrieve
 	var jsonString = localStorage.getItem("comics"); 
-	//console.log(jsonString);
 	var jsonObj = JSON.parse(jsonString);
 		
-	//look in the array arreglo de objetos
+	//create the object to put into the array
 	var user = {	username:form.id.value,
-					password:form.pass.value
+					password:form.pass.value,
+					type:"user"
 				};
 				
 	//add the new element (push con el elemento nuevo)
 	jsonObj.users.push(user);
 	
 	//generate jsonString again
-	console.log(jsonObj);
 	jsonString = JSON.stringify(jsonObj);
-	console.log(jsonString);
-	
+		
 	//return the string
 	return jsonString;
 }
