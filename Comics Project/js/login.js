@@ -1,27 +1,18 @@
-			function pasuser(form) {
-				//first time
+function validateLogin(form) {
+	
+var flag = 0;			
+var jsonString = localStorage.getItem("comics");
+var jsonObj = JSON.parse(jsonString);		
 				
-				//aqui deberia recuperar los datos de login 
-				// Retrieve. aqui recupero un string, lo parseo a JSON y de ahi trabajo
-				var user = localStorage.getItem("username");
-				var pass = localStorage.getItem("password");
-			
-				//una vez recuperados, valido
-				//si el usuario y la clave coinciden con los datos registrados, continuo
-				if (form.id.value== user) { 
-					if (form.pass.value==pass) {              
-					location="index.html";
-					
-					} else {
-							alert("Invalid Password")
-							}
-				} else {  
-						alert("Invalid User ID")
-						}
+for(i=0; i<jsonObj.users.length; i++){
+	if (form.id.value == jsonObj.users[i].username) { 
+		flag = 1;
+		if (form.pass.value == jsonObj.users[i].password) {              
+			location="index.html";
+		} else {
+				alert("Invalid Password.");
 				}
-			
-			
-			aqui lo que hago es recuperar el storage,
-			buscar el user, si lo encuentro comparo la clave
-			si es correcta
-			redirecciono al indexedDB
+		}
+	}	
+	if(flag == 0) alert("Invalid User ID, please try again.");
+}
