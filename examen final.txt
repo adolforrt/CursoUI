@@ -7,3 +7,7 @@ Federico Severino
 http://www.w3schools.com/html/html5_webstorage.asp
 https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
 https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse
+
+
+http://www.freecomicbookday.com/Home/1/1/27/986?articleID=116248
+http://www.dccomics.com/blog/2015/09/11/first-look-dcs-legends-of-tomorrows-hawkgirl-and-hawkman

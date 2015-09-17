@@ -1,20 +1,125 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 		<script src="js/index.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	</head>
 	<body onload="loadUser()">
 		<div>
 			<h1>This is the index.html</h1>
 			<div id="user" ></div>
-			
-			<ul  style="display: inline-block;">
-  				<li class="active"><a href="#">Home</a></li>
-  				<li><a href="#" id="tab1" onclick="tab1(this)">Menu 1</a></li>
-  				<li><a href="#" id="tab2" onclick="tab2()">Menu 2</a></li>
-  				<li><a href="#" id="tab3" onclick="tab3()">Menu 3</a></li>
-			</ul>
-			<div id="tabContainer"></div>
+						
+			<div id="tabContainer">
+				<div>
+
+					<!-- Nav tabs -->
+					<ul class="nav nav-tabs" role="tablist">
+						<li role="presentation" class="active" onclick="tab1()"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Genres</a></li>
+						<li role="presentation" onclick="tab2()"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Editions</a></li>
+						<li role="presentation" onclick="tab3()"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">News</a></li>
+						<li role="presentation" onclick="tab4()"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Characters</a></li>
+					</ul>
+					
+					<!-- Tab panes -->
+					<div class="tab-content">
+						<div role="tabpanel" class="tab-pane active" id="home"><h2>Comic Genres</h2>
+							<h3>Comics have been written in a variety of styles and genres, to suit every taste. 
+								Here are just some of the many genres to be found in today's comics:
+							</h3>
+							<ul>
+								<li>Superhero</li>
+								<li>Manga</li>
+								<li>Slice-of-life</li>
+								<li>Humor</li>
+								<li>Non-fiction</li>
+								<li>Non-fiction</li>
+								<li>Science-fiction/Fantasy</li>
+								<li>Horror</li>
+							</ul>
+							<h4>Superhero</h4>
+							<p> 
+							One of the most celebrated comic book genres, Superhero comics feature the likes of Superman, Batman, Spider-Man and the X-Men individuals often clad in capes and masks, who use their extraordinary abilities to protect humanity. Superheroes have captured the public imagination ever since the first appearance of Superman in Action Comics #1 in 1938. Heavy on action, adventure and memorable, iconic characters, superhero comics are often considered to be a modern form of mythology. MangaWhile some characters and series have been around since the 1940's, new characters with different abilities, costumes and universes are constantly being invented.
+							</p>
+							
+							<h4>Manga</h4>
+							<p>
+							Manga refers to an Asian style of trade paperback graphic novel that has recently reached new heights of popularity in the United States. Manga contains several genres that are marketed to very specific types of readers. Shojo (also spelled Shoujo) is a genre typically aimed at young teenage girls, usually involving drama and romance. Slice of LifeShonen refers to manga primarily intended for boys and features humorous stories and high levels of action. Manga that is translated from Japanese is often printed to be read from right to left, in order to retain the authenticity of the original version. Manga titles are also frequently part of a series containing several volumes, and can be very addictive!
+							</p>
+							
+							<h4>Slice-of-Life</h4>
+							<p>
+							Many comics and graphic novels offer thoughtful portrayals of real life. HumorThese can take the form of autobiography, 
+							relationship drama or historical fiction, among other examples. Slice-of-life comics are frequently popular with older 
+							teenagers and adults in search of a contemplative read.
+							</p>
+							
+							<h4>Non-fiction</h4>
+							<p>Non-fiction
+							Comics have proven to be a great educational tool, and many have been created to explore such diverse topics as science, history, politics and biography.
+							</p>
+							
+							<h4>Science-Fiction/Fantasy</h4>
+							<p>Science-Fiction/Fantasy
+							Those who like to imagine other worlds will find a multitude of fantastic universes to explore in comics.
+							</p>
+							
+							<h4>Horror</h4>
+							<p>Horror
+							Frights, chills and thrills abound in comics with creepy illustrations and suspense-building stories.
+							</p></div>
+						<div role="tabpanel" class="tab-pane" id="profile">Editions</div>
+						<div role="tabpanel" class="tab-pane" id="messages"><h1>Exclusive Preview: Injustice: Gods Among Us: Year Four #20</h1>
+							<h2>Check out this all-new exclusive preview from our Digital First series: INJUSTICE: GODS AMONG US: YEAR FOUR #20.</h2>
+							<p>
+								Tomorrow in an all new INJUSTICE: GODS AMONG US: YEAR FOUR chapter 20, Poseidon's tidal wave is unleashed upon Themyscira, causing Batman to make a tough decision: whether to sacrifice a few for the many. Makes sure to download this digital chapter tomorrow via the DC Comics App, Readdcentertainment.com, iBooks, comiXology.com, Google Play, Kindle Store, Nook Store, and iVerse ComicsPlus.  	
+							</p>
+							
+							<h1>The Great Batman Banner Hunt is On!</h1>
+							<h2>
+							Sometimes Batman hides in the shadows. Sometimes he hides in a collection of DC Comics Facebook banners.
+							</h2>
+							<p>
+							Batman Day is Saturday, September 26, and to help fans like you get into the spirit, we’ve updated many of our Facebook banners. Perhaps you noticed.
+							That’s the new banner you’ll find on our Aquaman Facebook page. Yes, they celebrate Batman Day in Atlantis. And no, I don’t know how they keep their free Batman comic book from getting sopping wet. But what's really important is...
+							
+							Did you notice anything about the image above? There’s the Batman Day logo, but what’s that off there to the left?
+							It IS Batman. But he’s not in the original art. We added him in as a sort of Batman Day Easter Egg, and have done the same for eight more of our Facebook banners.
+							</p>
+							
+							<h1>Preview Monday: Superman/Wonder Woman #21</h1>
+							<h2>
+							Welcome back for Preview Monday! This week we are giving a sneak peek at SUPERMAN/WONDER WOMAN #21.
+							</h2>
+							<p>
+							This Wednesday in an all new SUPERMAN/WONDER WOMAN #21 the epic “Truth” arc hits close to the heart as dark secrets come to light, forcing Superman and Wonder Woman to question whether their relationship can work in this new world of identities revealed and questionable actions. Make sure to check SUPERMAN/WONDER WOMAN #21 written by Peter J. Tomasi with art by Doug Mahnke, Jaime Mendoza, Mark Irwin, Sean Parsons and Scott Hanna. 	
+							</p>
+							
+							<h1>Voicing Vixen: An Interview with Megalyn Echikunwoke</h1>
+							<h2></h2>
+							<p>
+							The fourth episode of Vixen, the animated digital series set within the Arrow and Flash TV universe, debuts today on CW Seed. It’s arguably the best episode yet, finding our wildlife-fueled hero being put to her first real test as she attempts to escape from the Flash and Arrow (voiced by guest stars Grant Gustin and Stephen Amell). The pace of the episode is relentless and the confrontation is a pretty spectacular set piece that gives us the first real glimmer of the potential Vixen has as a hero in this already rich world. If you’re anything like us, it’ll leave you itching for the next episode. But since that’s still a week away, we thought we’d fill some of that time by talking Vixen with the gifted actress behind the animated hero—Megalyn Echikunwoke.	
+							</p>
+							
+							<h1>First Look: DC's Legends of Tomorrow's Hawkgirl and Hawkman</h1>
+							<h2>
+							Hawkgirl and Hawkman fans are about to see their two favorite heroes take wing on DC’s Legends of Tomorrow. But how will they look? Pretty awesome, it turns out…
+							</h2>
+							<p>
+							That’s Ciara Renée as Kendra Saunders and Falk Hentschel as her soulmate Carter Hall in the first official image of the two characters. With powers derived from the ancient Egyptian hawk god, Horus, Kendra and Carter are destined to reincarnate through time as winged, helmeted warriors. On DC’s Legends of Tomorrow, Hawkgirl and Hawkman will fight alongside the Atom, Firestorm, White Canary, Captain Cold and Heat Wave against the immortal Vandal Savage. Look for them to initially debut in this season’s Arrow and The Flash crossover episode before moving on to DC’s Legends of Tomorrow.
+							
+							So what do you think? Are you ready for some mace-wielding mayhem? Sound off in the comments below!	
+							</p>
+</div>
+						<div role="tabpanel" class="tab-pane" id="settings">Characters</div>
+					</div>
+					
+					</div>
+					<div id="content">
+						
+					</div>
+			</div>
 		</div>
 	</body>
 </html>	
