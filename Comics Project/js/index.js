@@ -4,10 +4,10 @@ function loadUser(){
 	var username = jsonObj.justSigned.username;
 	document.getElementById("user").innerHTML = "Hello "+ '<a  href="myAccount.html">'+username+'</a>';
 	markup();
-	pills();
+	
 }
 
-	
+/*	
 function pills(){
 $(".nav.nav-pills.nav-stacked li").on("click",function(){
   $(".nav.nav-pills li").removeClass("active");
@@ -21,7 +21,7 @@ $('#myTabs a').click(function (e) {
   $(this).tab('show')
 })
 
-
+*/
 
 
 

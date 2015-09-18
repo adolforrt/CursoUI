@@ -116,20 +116,22 @@
 			<div id="navpills" >
 				
 					<ul class="nav nav-pills nav-stacked col-md-2">
-						<li class="active"><a href="#tab_a" data-toggle="pill">All Comics</a></li>
+						<li class="active"><a href="#tab_a" data-toggle="pill" onclick="markup()">All Comics</a></li>
 						<li><a href="#tab_b" data-toggle="pill">Characters</a></li>
 						<li><a href="#tab_c" data-toggle="pill">Genres</a></li>
 						<li><a href="#tab_d" data-toggle="pill">Games</a></li>
 					</ul>
 					
 					<div class="tab-content col-md-10">
+						
 						<div class="tab-pane active" id="tab_a">
 							<h4>Pane A</h4>
 							<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames
 								ac turpis egestas.</p>
-							<div class="container">me voy a canada</div>	
+							<div id="comicsContainer"></div>	
 						</div>
-						<div class="tab-pane" id="tab_b">
+						
+						<div class="tab-pane" id="tab_b" >
 							<h4>Pane B</h4>
 							<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames
 								ac turpis egestas.</p>
