@@ -1,0 +1,13 @@
+body{
+	background-color: black;
+}
+
+.main{
+	margin:auto;
+	width: 40%;
+	padding-top: 10%;
+}
+
+img{
+	display:inline-block;
+}
