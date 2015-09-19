@@ -3,7 +3,6 @@
 	<head>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-		<script src="js/index.js"></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/login.css">
 		<script src="js/login.js"></script>
@@ -11,27 +10,33 @@
 	
 	<body>
 		<div class="main">
-				<!--
-				<img src="img/batman_login.jpg" alt="">
-				-->
-									
-							<form name="login" class="form-control">
-								<div class="input-group">
- 									 <span class="input-group-addon" id="basic-addon1">@</span>
-  									<input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
-								</div>
-
-								
-								<input name="id"  type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
-								<input name="pass" type="password"  class="form-control" placeholder="Password"  aria-describedby="basic-addon1">
-								<input type="button" value="Login" onClick="validateLogin(this.form)">
-								<br>
-								<input type="Reset">
-								<br>
-								Not a user?<a href="registration.html">Create an account</a>
-							</form>		
-		
+			<div class="panel panel-default">
+					<div class="panel-body">
+					<h1>Comics Comet</h1>
+					<form name="login" >
+						<div class="form-group">
+								<label >User Name</label>
+								<input name="id" type="email" class="form-control" id="exampleInputEmail1" placeholder="Username">
+						</div>
+						<div class="form-group">
+								<label >Password</label>
+								<input name="pass" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+						</div>
+							
+							<input type="button" class="btn btn-info" value="Enter" onClick="validateLogin(this.form)">
+							<input type="Reset" class="btn btn-default btn-sm" value="Reset">
+							<div class="pull-right">
+								<label>Not a member? </label><a href="registration.html"> Create an account</a>
+							</div>
+					</form>					
+					</div>
+			</div>
+			<div class="right">
+				<img src="img/ironman_login.jpg" alt="">
+			</div>
+			
 		</div>
 	</body>
+
 </html>	
     					

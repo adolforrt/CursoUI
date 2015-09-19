@@ -11,26 +11,29 @@
 	
 	<body>
 		<div class="main">
-				<!--
-				<img src="img/batman_login.jpg" alt="">
-				-->
-									
-							<form name="login" class="form-control">
-								<div class="input-group">
- 									 <span class="input-group-addon" id="basic-addon1">@</span>
-  									<input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
-								</div>
-
-								
-								<input name="id"  type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
-								<input name="pass" type="password"  class="form-control" placeholder="Password"  aria-describedby="basic-addon1">
-								<input type="button" value="Login" onClick="validateLogin(this.form)">
-								<br>
-								<input type="Reset">
-								<br>
-								Not a user?<a href="registration.html">Create an account</a>
-							</form>		
-		
+				
+				<form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputFile">File input</label>
+    <input type="file" id="exampleInputFile">
+    <p class="help-block">Example block-level help text here.</p>
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox"> Check me out
+    </label>
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+							
 		</div>
 	</body>
 </html>	
