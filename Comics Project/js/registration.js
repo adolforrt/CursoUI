@@ -4,7 +4,6 @@ if(form.pass.value != ""){
 	if(form.pass.value != form.pass2.value){
 		alert("Passwords are not the same");
 	}
-}	
 else{
 	//FIRST TIME
 	if (!localStorage.getItem("comics")) {
@@ -22,12 +21,18 @@ else{
 	}
 		location = "login.html";
 	}						
+}	
 }
 
 
 
 function firstTime(form){
-	var jTemp = JSON.parse('{ 	"justSigned": { "username": "'+form.id.value+'" , "password": "'+form.pass.value+'","type":"user"}, "users": [{"username":"'+form.id.value+'","password":"'+form.pass.value+'","type":"user"}]}');
+	var userType = "user";
+	if(form.admin.value == "on"){
+		userType = "admin";
+	}
+	
+	var jTemp = JSON.parse('{ 	"justSigned": { "username": "" , "password": "","type":""}, "users": [{"username":"'+form.id.value+'","password":"'+form.pass.value+'","type":"'+userType+'"}]}');
 	var jsonString = JSON.stringify(jTemp);
 	console.log("users length: "+jTemp.users.length +"  elements: ");
 	
@@ -44,11 +49,15 @@ function store(form){
 	//retrieve
 	var jsonString = localStorage.getItem("comics"); 
 	var jsonObj = JSON.parse(jsonString);
-		
+	var userType = "user";
+	
+	if(form.admin.value == "on"){
+		type = "admin";
+	}	
 	//create the object to put into the array
 	var user = {	username:form.id.value,
 					password:form.pass.value,
-					type:"user"
+					type:userType
 				};
 				
 	//add the new element (push con el elemento nuevo)
