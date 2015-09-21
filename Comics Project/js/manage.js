@@ -8,7 +8,6 @@ function loadUser(){
 }
 
 function markup(){
-	
 	if(document.getElementById("comicsContainer").innerHTML == "")
 	{
 		//retrieve data
@@ -19,24 +18,14 @@ function markup(){
 		for(i=0; i<jsonObj.comics.length; i++){
 			var name = jsonObj.comics[i].name;
 			var comic;
-			if(jsonObj.comics[i].rented == "no"){
-				comic = '<div class="comic" id="'+jsonObj.comics[i].name+'"><img src="'
+			comic = '<div class="comic" id="'+jsonObj.comics[i].name+'"><img src="'
 						+jsonObj.comics[i].pic+'" alt="" ><h3>'
 						+jsonObj.comics[i].name+'</h3><div>Available: '
 						+jsonObj.comics[i].avail+'</div><div>Genre: '
 						+jsonObj.comics[i].genre+'</div><div>Pages: '
 						+jsonObj.comics[i].pages+'</div><div>Format: '
 						+jsonObj.comics[i].format+'<br><br></div><div><input id ="'+name+'btn" type="button" class="btn btn-info" value="Rent Now!" onclick="rent(this)" ></div></div>';
-			}else{
-				comic = '<div class="comic rented" id="'+jsonObj.comics[i].name+'"><img src="'
-						+jsonObj.comics[i].pic+'" alt="" ><h3>'
-						+jsonObj.comics[i].name+'</h3><div>Available: '
-						+jsonObj.comics[i].avail+'</div><div>Genre: '
-						+jsonObj.comics[i].genre+'</div><div>Pages: '
-						+jsonObj.comics[i].pages+'</div><div>Format: '
-						+jsonObj.comics[i].format+'<br><br></div><div><input id ="'+name+'btn" type="button" class="btn btn-warning" value="Return comic" onclick="giveBack(this)"></div></div>';
-			}
-							
+										
 			//inject within DOM
 			document.getElementById("comicsContainer").innerHTML += comic;
 			if(document.getElementById("comicsContainer") == null){
@@ -59,6 +48,49 @@ function admin(){
 	}
 	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//-------------------------------
 
 function rent(button){
 	var name = button.id;

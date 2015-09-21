@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<script src="js/index.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/index.css">
+	</head>
+	<body onload="loadUser()">
+		
+		<div id = "main">	
+		<div id="mainContainer">
+			
+  				
+			
+			<nav class="navbar navbar-default">
+				<div >
+						<div class="navbar-header">
+							<a class="navbar-brand" href="index.html">Comics Comet</a>
+						</div>
+					
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+							<ul class="nav navbar-nav navbar-right">
+								<li id="manage"></li>
+								<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><div id="user" ></div><span class="caret"></span></a>
+									<ul class="dropdown-menu">
+									<li><a href="myAccount.html">My account</a></li>
+									<li><a href="myProfile.html">My profile</a></li>
+									<li role="separator" class="divider"></li>
+									<li><a href="login.html">Logout</a></li>
+								</ul>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+				  
+			
+		
+			<div id="carousel" >
+			<!-- carousel container-->			
+				<div>
+					<div class="col-md-3" style="background-color: black;height: 160px;"></div>
+					<div class="col-md-6" style="background-color: black;height: 160px;">
+							
+										<div id="myCarousel" class="carousel slide" data-ride="carousel">
+											<!-- Carousel indicators -->
+											<ol class="carousel-indicators">
+												<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+												<li data-target="#myCarousel" data-slide-to="1"></li>
+												<li data-target="#myCarousel" data-slide-to="2"></li>
+											</ol>   
+											<!-- Wrapper for carousel items -->
+											<div class="carousel-inner">
+												<div class="item active">
+													<img src="img/storm_thumb.jpg" alt="First Slide" style="height:160px;">
+												</div>
+												<div class="item">
+													<img src="img/spiderman_thumb.jpg" alt="Second Slide" style="height:160px;">
+												</div>
+												<div class="item">
+													<img src="img/venom_thumb.jpg" alt="Third Slide" style="height:160px;">
+												</div>
+											</div>
+											<!-- Carousel controls -->
+											<a class="carousel-control left" href="#myCarousel" data-slide="prev">
+												<span class="glyphicon glyphicon-chevron-left"></span>
+											</a>
+											<a class="carousel-control right" href="#myCarousel" data-slide="next">
+												<span class="glyphicon glyphicon-chevron-right"></span>
+											</a>
+										</div>
+					</div>
+					
+					<div class="col-md-3" style="background-color: black;height: 160px;"></div>
+				</div>			
+			
+		</div>
+		
+		<div id="lowerContainer" style="margin-top: 10px;">
+			<div id="navpills" >
+				
+					<ul class="nav nav-pills nav-stacked col-md-2">
+						<li class="active"><a href="#tab_a" data-toggle="pill" onclick="markup()">All Comics</a></li>
+						<li><a href="#tab_b" data-toggle="pill">Characters</a></li>
+						<li><a href="#tab_c" data-toggle="pill">Genres</a></li>
+						<li><a href="#tab_d" data-toggle="pill">Games</a></li>
+					</ul>
+					
+					<div class="tab-content col-md-10">
+						
+						<div class="tab-pane active" id="tab_a">
+							<div class="panel panel-default col-md-10">
+								<div class="panel-body">
+									<h4></h4>
+									<div class="col-md-10" id="comicsContainer"></div>	
+								</div>
+							</div>
+						</div>
+						
+						<div class="tab-pane" id="tab_b" >
+							<div class="panel panel-default col-md-10">
+								<div class="panel-body">
+									<h4>Characters</h4>
+								
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane" id="tab_c">
+							<h4>Genres</h4>
+						</div>
+						<div class="tab-pane" id="tab_d">
+							<h4>Games</h4>
+						</div>
+								
+						
+					</div><!-- tab content -->	
+			</div>
+		</div>
+	
+				
+		
+				
+				<div id="footer">
+					<hr>
+					<div class="row">
+						<div class="col-md-4">
+							<p class="upper"><strong>Site map</strong></p>
+							<p>Comics</p>
+							<p>Genres</p>
+							<p>Editions</p>
+							<p>About Us</p>
+						</div>
+						<div class="col-md-4">
+							<p class="upper"><strong>Follow Us</strong></p>
+							<p><a href="https://twitter.com/?lang=en" target="_blank">Twitter</a></p>
+							<p><a href="https://www.facebook.com/" target="_blank">Facebook</a></p>
+							<p><a href="https://instagram.com/" target="_blank">Instagram</a></p>
+							<p><a href="https://vk.com/">VK</a></p>
+						</div>
+						<div class="col-md-4">
+							<p class="upper"><strong>Disclaimer</strong></p>
+							<p>Comics</p>
+							<p>Genres</p>
+							<p>Editions</p>
+							<p>About Us</p>
+						</div>
+					</div>
+				</div>
+			</div> <!-- mainContainer div close -->
+		</div> <!-- main div close -->
+		
+	
+	</body>
+</html>	
+	
+		
+	

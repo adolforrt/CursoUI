@@ -30,8 +30,8 @@ body{
 .comic{
 	border: 1px solid #E7E5E5;
 	border-radius: 1%;
-	width: 250px;
-	height: 425px;
+	width: 260px;
+	height: 455px;
 	padding: 5px;
 	margin: 0px 15px 15px 15px;
 	display: inline-block;
@@ -85,4 +85,16 @@ body aside{
 
 .tab-pane img{
 	border-radius: 2px;
+}
+
+.rented div{
+	color: #CCCCCC;
+}
+
+.rented img{
+	opacity: 0.4;	
+}
+
+.rented h3{
+	color: #CCCCCC;
 }
