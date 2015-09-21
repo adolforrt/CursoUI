@@ -4,7 +4,6 @@ function loadUser(){
 	var username = jsonObj.justSigned.username;
 	document.getElementById("user").innerHTML = "Hello "+ '<a  href="myAccount.html">'+username+'</a>';
 	markup();
-	admin();
 }
 
 function markup(){
@@ -20,12 +19,16 @@ function markup(){
 			var comic;
 			comic = '<div class="comic" id="'+jsonObj.comics[i].name+'"><img src="'
 						+jsonObj.comics[i].pic+'" alt="" ><h3>'
-						+jsonObj.comics[i].name+'</h3><div>Available: '
-						+jsonObj.comics[i].avail+'</div><div>Genre: '
-						+jsonObj.comics[i].genre+'</div><div>Pages: '
-						+jsonObj.comics[i].pages+'</div><div>Format: '
-						+jsonObj.comics[i].format+'<br><br></div><div><input id ="'+name+'btn" type="button" class="btn btn-info" value="Rent Now!" onclick="rent(this)" ></div></div>';
+						+jsonObj.comics[i].name+'</h3><div>Available: <span class="editable" >'
+						+jsonObj.comics[i].avail+'</span></div><div>Genre: <span class="editable">'
+						+jsonObj.comics[i].genre+'</span></div><div>Pages: <span class="editable">'
+						+jsonObj.comics[i].pages+'</span></div><div>Format: <span class="editable">'
+						+jsonObj.comics[i].format+
+						'</span></div>'+
+						'<button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#myModal" onclick="fillForm(this)">Edit</button>'
+						+'</div></div>';
 										
+			console.log(comic);
 			//inject within DOM
 			document.getElementById("comicsContainer").innerHTML += comic;
 			if(document.getElementById("comicsContainer") == null){
@@ -35,98 +38,65 @@ function markup(){
 	}
 }
 
-
-function admin(){
+function fillForm(button){
 	
+	var div = button.parentNode;
+	var spans = document.getElementById(div.id).getElementsByTagName("span");
+	var img = document.getElementById(div.id).getElementsByTagName("img");
+	console.log(img);	
+	document.getElementById("name").value = div.id;
+	document.getElementById("avail").value = spans[0].innerHTML;
+	document.getElementById("genre").value = spans[1].innerHTML;
+	document.getElementById("pages").value = spans[2].innerHTML;
+	document.getElementById("format").value = spans[3].innerHTML;
+}
+
+function save(){
 	//retrieve
 	var jsonString = localStorage.getItem("comics"); 
 	var jsonObj = JSON.parse(jsonString);
+	var userType = "user";
 	
-	//inject
-	if(jsonObj.justSigned.type == "admin"){
-		document.getElementById("manage").innerHTML = '<a href="manage.html">Manage  <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></a>';
+	if(form.admin.value == "on"){
+		type = "admin";
+	}	
+	//create the object to put into the array
+	var user = {	username:form.id.value,
+					password:form.pass.value,
+					type:userType
+				};
+	
+	
+	for(i=0; i<jTemp.users.length; i++){
+		console.log("user: "+ jTemp.users[i].username);
+		console.log("pass: "+ jTemp.users[i].password);
 	}
 	
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//-------------------------------
-
-function rent(button){
-	var name = button.id;
-	var divId = name.substr(0,name.length-3);
-	var div = document.getElementById(divId);
 	
-	div.className = "comic rented";
-	button.parentNode.innerHTML = '<input id ="'+divId+'btn" type="button" class="btn btn-warning" value="Return comic!" onclick="giveBack(this)">';
-	rentComic(divId,"yes");
-}
-
-function giveBack(button){
-	var name = button.id;
-	var divId = name.substr(0,name.length-3);
-	var div = document.getElementById(divId);
-	
-	div.className = "comic";
-	button.parentNode.innerHTML = '<input id ="'+divId+'btn" type="button" class="btn btn-info" value="Rent Now!" onclick="rent(this)">';
-	rentComic(divId, "no");
-}
-
-function rentComic(comicName,value){
-	
-	//retrieve
-	var jsonString = localStorage.getItem("list"); 
-	var jsonObj = JSON.parse(jsonString);
-	
-	for(i=0; i<jsonObj.comics.length; i++){
-			if(jsonObj.comics[i].name == comicName){
 				
-				jsonObj.comics[i].rented = value;
-				
-			}	
-	}			
+	//add the new element (push con el elemento nuevo)
+	jsonObj.users.push(user);
+	
 	//generate jsonString again
 	jsonString = JSON.stringify(jsonObj);
-	//store
-	localStorage.setItem("list", jsonString);
-}	
+		
+	//return the string
+	return jsonString;
+}
+
+
+
+
+
+
+
+
+
+
+	
+
+$('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').focus()
+})
+
+
