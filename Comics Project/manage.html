@@ -85,9 +85,9 @@
 				
 					<ul class="nav nav-pills nav-stacked col-md-2">
 						<li class="active"><a href="#tab_a" data-toggle="pill" onclick="markup()">All Comics</a></li>
-						<li><a href="#tab_b" data-toggle="pill">Characters</a></li>
-						<li><a href="#tab_c" data-toggle="pill">Genres</a></li>
-						<li><a href="#tab_d" data-toggle="pill">Games</a></li>
+						<li><a href="#tab_b" data-toggle="pill">New Comic</a></li>
+						<li><a href="#tab_c" data-toggle="pill" onclick="markup2()">Remove Comics</a></li>
+						
 					</ul>
 					
 					<div class="tab-content col-md-10">
@@ -104,18 +104,39 @@
 						<div class="tab-pane" id="tab_b" >
 							<div class="panel panel-default col-md-10">
 								<div class="panel-body">
-									<h4>Characters</h4>
-								
+									<h4>New comic</h4>
+									<div class="col-md-10">
+										
+									<div class="form-group">
+										<form >
+												<label for="inputName" >Image URL</label>
+												<input name="imgUrl" id="imgUrl" class="form-control" value="">
+												<label >Name</label>
+												<input name="name" id="name" class="form-control" value="">
+												<label >Available</label>
+												<input name="avail" id="avail" class="form-control" value="">
+												<label for="inputName" >Genre</label>
+												<input name="genre" id="genre" class="form-control" value="" >
+												<label for="inputName" >Pages</label>
+												<input name="pages" id="pages" class="form-control" value="">
+												<label for="inputName" >Format</label>
+												<input name="format" id="format" class="form-control"  value="">
+												<input type="button" id="saveBtn" class="btn btn-danger" value="Save comic" onClick="newComic(this.form, this)">
+											
+										</form>
+									</div>
+									</div>
+									
 								</div>
 							</div>
 						</div>
+						
 						<div class="tab-pane" id="tab_c">
-							<h4>Genres</h4>
+							<h4></h4>
+							<div class="col-md-10" id="deleteComicsContainer"></div>
 						</div>
-						<div class="tab-pane" id="tab_d">
-							<h4>Games</h4>
+										
 						</div>
-								
 						
 					</div><!-- tab content -->	
 			</div>
@@ -148,7 +169,7 @@
 									
 							</div>
 							<div class="modal-footer">
-								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								<button type="button" class="btn btn-default" data-dismiss="modal" onclick="restoreBtnClass()" >Close</button>
 								<input type="button" id="saveBtn" class="btn btn-danger" value="Save changes" onClick="save(this.form, this)">
 							</div>
 						</form>					

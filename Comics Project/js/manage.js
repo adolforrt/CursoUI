@@ -38,6 +38,39 @@ function markup(){
 	}
 }
 
+function markup2(){
+	console.log("markup2");
+	if(document.getElementById("deleteComicsContainer").innerHTML == "")
+	{
+		//retrieve data
+		var jsonString = localStorage.getItem("list"); 
+		var jsonObj = JSON.parse(jsonString);
+				
+		//generate markup	
+		for(i=0; i<jsonObj.comics.length; i++){
+			var name = jsonObj.comics[i].name;
+			var comic;
+			comic = '<div class="comic" id="'+jsonObj.comics[i].name+'"><img src="'
+						+jsonObj.comics[i].pic+'" alt="" ><h3>'
+						+jsonObj.comics[i].name+'</h3><div>Available: <span class="editable" >'
+						+jsonObj.comics[i].avail+'</span></div><div>Genre: <span class="editable">'
+						+jsonObj.comics[i].genre+'</span></div><div>Pages: <span class="editable">'
+						+jsonObj.comics[i].pages+'</span></div><div>Format: <span class="editable">'
+						+jsonObj.comics[i].format+
+						'</span></div>'+
+						'<button type="button" class="btn btn-primary btn-md" onclick="removeComic(this)">Delete</button>'
+						+'</div></div>';
+										
+			console.log(comic);
+			//inject within DOM
+			document.getElementById("deleteComicsContainer").innerHTML += comic;
+			if(document.getElementById("comicsContainer") == null){
+				console.log("couldnt find container");
+			}
+		}
+	}
+}
+
 function fillForm(button){
 	
 	var div = button.parentNode;
@@ -76,6 +109,60 @@ function save(form, button){
 	
 	//disable Save button
 	button.className = "btn btn-success";
+}
+
+function restoreBtnClass(){
+	document.getElementById("saveBtn").className = "btn btn-danger"
+}
+
+function newComic(form, button){
+	//retrieve
+	var jsonString = localStorage.getItem("list"); 
+	var jsonObj = JSON.parse(jsonString);
+	console.log		
+	var comic = { 	pic:form.imgUrl.value,
+					name:form.name.value,
+					genre:form.genre.value,
+					format:form.format.value,
+					pages:form.pages.value,
+					avail:form.avail.value,
+					rented:"no"	  
+	};
+	
+	jsonObj.comics.push(comic);
+				
+	//generate jsonString again
+	jsonString = JSON.stringify(jsonObj);
+	
+	//store data
+	localStorage.setItem("list", jsonString);	
+}
+
+function removeComic(button){
+	var div = button.parentNode;
+	console.log(div.id);
+	//retrieve
+	var jsonString = localStorage.getItem("list"); 
+	var jsonObj = JSON.parse(jsonString);
+	
+	for(i=0; i<jsonObj.comics.length; i++){
+		if(jsonObj.comics[i].name == div.id){
+			jsonObj.comics.splice(i,1);
+			break;
+		}
+	}
+		
+	//generate jsonString again
+	jsonString = JSON.stringify(jsonObj);
+	
+	//store data
+	localStorage.setItem("list", jsonString);	
+	
+	document.getElementById("deleteComicsContainer").innerHTML = "";
+	markup2();
+		
+	
+	
 }
 
 
