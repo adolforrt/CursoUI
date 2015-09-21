@@ -135,6 +135,7 @@
 							<div class="form-group">
   									<label >Name</label>
 									<input name="name" id="name" class="form-control" value="">
+									<input name="oldName" id="oldName" styclass="form-control" value="" style="display:none;">
 									<label >Available</label>
 									<input name="avail" id="avail" class="form-control" value="">
 									<label for="inputName" >Genre</label>
@@ -143,15 +144,16 @@
 									<input name="pages" id="pages" class="form-control" value="">
 									<label for="inputName" >Format</label>
 									<input name="format" id="format" class="form-control"  value="">
+									<span name="oldName" style="display:none" value=""></span>
 									
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								<input type="button" id="saveBtn" class="btn btn-danger" value="Save changes" onClick="save(this.form, this)">
 							</div>
 						</form>					
       </div>
 	  
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" onclick="save(this.form)">Save changes</button>
-      </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->

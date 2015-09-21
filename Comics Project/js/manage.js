@@ -45,43 +45,37 @@ function fillForm(button){
 	var img = document.getElementById(div.id).getElementsByTagName("img");
 	console.log(img);	
 	document.getElementById("name").value = div.id;
+	document.getElementById("oldName").value = div.id;
 	document.getElementById("avail").value = spans[0].innerHTML;
 	document.getElementById("genre").value = spans[1].innerHTML;
 	document.getElementById("pages").value = spans[2].innerHTML;
 	document.getElementById("format").value = spans[3].innerHTML;
+	
 }
 
-function save(){
+function save(form, button){
 	//retrieve
-	var jsonString = localStorage.getItem("comics"); 
+	var jsonString = localStorage.getItem("list"); 
 	var jsonObj = JSON.parse(jsonString);
-	var userType = "user";
-	
-	if(form.admin.value == "on"){
-		type = "admin";
-	}	
-	//create the object to put into the array
-	var user = {	username:form.id.value,
-					password:form.pass.value,
-					type:userType
-				};
-	
-	
-	for(i=0; i<jTemp.users.length; i++){
-		console.log("user: "+ jTemp.users[i].username);
-		console.log("pass: "+ jTemp.users[i].password);
+	console.log(button);
+			
+	for(i=0; i<jsonObj.comics.length; i++){
+		if(jsonObj.comics[i].name == form.oldName.value){
+			jsonObj.comics[i].avail = form.avail.value;
+			jsonObj.comics[i].genre = form.genre.value;
+			jsonObj.comics[i].pages = form.pages.value;
+			jsonObj.comics[i].format = form.format.value;
+		}
 	}
-	
-	
-				
-	//add the new element (push con el elemento nuevo)
-	jsonObj.users.push(user);
-	
+		
 	//generate jsonString again
 	jsonString = JSON.stringify(jsonObj);
-		
-	//return the string
-	return jsonString;
+	
+	//store data
+	localStorage.setItem("list", jsonString);	
+	
+	//disable Save button
+	button.className = "btn btn-success";
 }
 
 
